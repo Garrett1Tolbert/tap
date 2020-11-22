@@ -1,11 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from '@emotion/styled';
 import SocialButton from '../atoms/SocialButton';
-import {
-	createUser,
-	signInWithGoogle,
-	signInWithFacebook,
-} from '../../firebase/functions';
+import { signInWithGoogle, signInWithFacebook } from '../../firebase/functions';
 import { MainContext } from '../../context/MainContext';
 import { useHistory } from 'react-router-dom';
 
@@ -93,8 +89,6 @@ const Link = styled.p`
 
 function Login() {
 	let history = useHistory();
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
 	const { user } = useContext(MainContext);
 
 	useEffect(() => {
@@ -103,7 +97,7 @@ function Login() {
 	return (
 		<Container>
 			<Card>
-				<Icon className="material-icons">lock</Icon>
+				<Icon className='material-icons'>lock</Icon>
 				<Title>Login</Title>
 				<SocialButton isGoogle onClick={signInWithGoogle} />
 				<SocialButton onClick={signInWithFacebook} />
@@ -112,18 +106,17 @@ function Login() {
 					<Or>Or</Or>
 					<Divider />
 				</OrSection>
-				<Input
-					type="email"
-					placeholder="Email"
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-				<Input
-					type="password"
-					placeholder="Password"
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-				<Button onClick={() => createUser(email, password)}>Login</Button>
-				<Link>Don't have an account yet? Click here</Link>
+				<Input type='email' placeholder='Email' />
+				<Input type='password' placeholder='Password' />
+				<Button>Login</Button>
+				<Link
+					onClick={() => {
+						history.replace('/login');
+						window.self.location.href = '/newaccount';
+					}}
+				>
+					Don't have an account yet? Click here
+				</Link>
 			</Card>
 		</Container>
 	);

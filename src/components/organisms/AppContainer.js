@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home';
+import CreateAccount from './CreateAccount';
 import { MainContext } from '../../context/MainContext';
 import { auth } from '../../firebase/config';
 import Sidebar from '../molecules/Sidebar';
@@ -50,10 +51,13 @@ function AppContainer() {
 			<Router>
 				<Sidebar />
 				<Switch>
-					<Route path="/login">
+					<Route path='/login'>
 						<Login />
 					</Route>
-					<PrivateRoute loggedIn={user} path="/">
+					<Route path='/newaccount'>
+						<CreateAccount />
+					</Route>
+					<PrivateRoute loggedIn={user} path='/'>
 						<Home />
 					</PrivateRoute>
 				</Switch>
