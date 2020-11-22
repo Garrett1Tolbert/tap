@@ -1,17 +1,17 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext } from 'react';
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
 	Redirect,
-} from "react-router-dom";
-import Login from "./Login";
-import Home from "./Home";
-import CreateAccount from "./CreateAccount";
-import { MainContext } from "../../context/MainContext";
-import { auth } from "../../firebase/config";
-import Sidebar from "../molecules/Sidebar";
-import styled from "@emotion/styled";
+} from 'react-router-dom';
+import Login from './Login';
+import Home from './Home';
+import CreateAccount from './CreateAccount';
+import { MainContext } from '../../context/MainContext';
+import { auth } from '../../firebase/config';
+import Sidebar from '../molecules/Sidebar';
+import styled from '@emotion/styled';
 
 const PrivateRoute = ({ children, loggedIn, ...rest }) => {
 	return (
@@ -23,7 +23,7 @@ const PrivateRoute = ({ children, loggedIn, ...rest }) => {
 				) : (
 					<Redirect
 						to={{
-							pathname: "/login",
+							pathname: '/login',
 							state: { from: location },
 						}}
 					/>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "@emotion/styled";
-import CreateAccountButton from "../atoms/CreateAccountButton";
+import React, { useState } from 'react';
+import styled from '@emotion/styled';
+import CreateAccountButton from '../atoms/CreateAccountButton';
 const Container = styled.div`
 	width: 100vw;
 	height: 100vh;
@@ -53,8 +53,8 @@ const BackIcon = styled.i`
 `;
 
 function CreateAccount() {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	return (
 		<div>
 			<Container>
@@ -62,7 +62,7 @@ function CreateAccount() {
 					<Icon className='material-icons'>lock</Icon>
 					<BackIcon
 						className='material-icons'
-						onClick={() => (window.location.href = "/login")}
+						onClick={() => (window.location.href = '/login')}
 					>
 						arrow_back_ios
 					</BackIcon>

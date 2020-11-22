@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import styled from "@emotion/styled";
-import { createUser } from "../../firebase/functions";
+import React, { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
+import { createUser } from '../../firebase/functions';
 
 const Button = styled.div`
 	padding: 16px;
@@ -38,13 +38,13 @@ function CreateAccountButton(props) {
 				onClick={() => {
 					setClicked(!clicked);
 					error !== null
-						? alert("Account Exists Already!")
-						: (window.location.href = "/login"); // ****Update to homescreen when created****
+						? alert('Account Exists Already!')
+						: (window.location.href = '/login'); // ****Update to homescreen when created****
 				}}
 			>
 				Create Account
 			</Button>
-			<Link onClick={() => (window.location.href = "/login")}>
+			<Link onClick={() => (window.location.href = '/login')}>
 				Already have an account? Login here.
 			</Link>
 		</>

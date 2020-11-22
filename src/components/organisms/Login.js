@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from "react";
-import styled from "@emotion/styled";
-import SocialButton from "../atoms/SocialButton";
-import { signInWithGoogle, signInWithFacebook } from "../../firebase/functions";
-import { MainContext } from "../../context/MainContext";
-import { useHistory } from "react-router-dom";
+import React, { useEffect, useContext } from 'react';
+import styled from '@emotion/styled';
+import SocialButton from '../atoms/SocialButton';
+import { signInWithGoogle, signInWithFacebook } from '../../firebase/functions';
+import { MainContext } from '../../context/MainContext';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
 	width: 100vw;
@@ -92,7 +92,7 @@ function Login() {
 	const { user } = useContext(MainContext);
 
 	useEffect(() => {
-		user && history.replace("/");
+		user && history.replace('/');
 	}, [user, history]);
 	return (
 		<Container>
@@ -111,8 +111,8 @@ function Login() {
 				<Button>Login</Button>
 				<Link
 					onClick={() => {
-						history.replace("/login");
-						window.self.location.href = "/newaccount";
+						history.replace('/login');
+						window.self.location.href = '/newaccount';
 					}}
 				>
 					Don't have an account yet? Click here
